@@ -1,7 +1,8 @@
+# импорт библиотек 
 import tkinter as tk
 from tkinter import ttk, messagebox
 import random
-
+# определение используемой темы (ака попытка dark academia)
 THEME = {
     'colors': {
         'bg_main': '#1a1a2e',
@@ -18,6 +19,7 @@ THEME = {
         'small': ('Times New Roman', 10),
     }
 }
+# создание БД по книгам, с представленными характеристиками 
 BOOKS = [
     {
         'id': 1,
@@ -74,6 +76,7 @@ BOOKS = [
         'quote': 'У нас люди редко друг друга держатся, – сказал он задумчиво. – Не знаю почему. Может, в этом проклятом мире все боятся друг друга.'
     }
 ]
+# кортежи с вопросами
 QUESTIONS = [
     ("В детстве вы часто чувствовали себя одиноким?",
      ["Никогда", "Иногда", "Часто", "Я все еще одинок"]),
@@ -86,7 +89,7 @@ QUESTIONS = [
     ("Гордятся ли вами ваши родители?",
      ["Безусловно", "Думаю, что да", "Гордыня - грех", "Я - сплошное разочарование"]),
 ]
-
+# основной класс програмы
 class TraumaBookApp:
     def __init__(self, root):
         self.root = root
@@ -114,7 +117,7 @@ class TraumaBookApp:
         self.create_questions_panel(content_frame)
         self.create_results_panel(content_frame)
         self.show_welcome()
-    def create_header(self, parent):
+    def create_header(self, parent): #чтобы было красиво - в верхней панельке
         tk.Frame(parent, height=2, bg=THEME['colors']['text_gold']).pack(fill=tk.X, pady=(0, 15))
         title_frame = tk.Frame(parent, bg=THEME['colors']['bg_main'])
         title_frame.pack()
